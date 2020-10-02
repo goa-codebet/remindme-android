@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authStartFragment">
+
+
+    <fragment
+        android:id="@+id/authStartFragment"
+        android:name="se.codebet.remindme.AuthStartFragment"
+        android:label="fragment_auth_start"
+        tools:layout="@layout/fragment_auth_start" >
+        <action
+            android:id="@+id/action_authStartFragment_to_authEmailFragment"
+            app:destination="@id/authEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authEmailFragment"
+        android:name="se.codebet.remindme.AuthEmailFragment"
+        android:label="fragment_auth_email"
+        tools:layout="@layout/fragment_auth_email" >
+        <action
+            android:id="@+id/action_authEmailFragment_to_authSuccessFragment"
+            app:destination="@id/authSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authSuccessFragment"
+        android:name="se.codebet.remindme.AuthSuccessFragment"
+        android:label="fragment_auth_success"
+        tools:layout="@layout/fragment_auth_success" >
+        <action
+            android:id="@+id/action_authSuccessFragment_to_authPasswordFragment"
+            app:destination="@id/authPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authPasswordFragment"
+        android:name="se.codebet.remindme.AuthPasswordFragment"
+        android:label="fragment_auth_password"
+        tools:layout="@layout/fragment_auth_password" />
+</navigation>
