@@ -32,10 +32,19 @@
         <action
             android:id="@+id/action_authSuccessFragment_to_authPasswordFragment"
             app:destination="@id/authPasswordFragment" />
+        <argument
+            android:name="is_login"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/authPasswordFragment"
         android:name="se.codebet.remindme.ui.auth.AuthPasswordFragment"
         android:label="fragment_auth_password"
-        tools:layout="@layout/fragment_auth_password" />
+        tools:layout="@layout/fragment_auth_password" >
+        <argument
+            android:name="is_login"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
 </navigation>
