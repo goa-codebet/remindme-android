@@ -1,4 +1,4 @@
-package se.codebet.remindme;
+package se.codebet.remindme.ui.auth;
 
 import android.os.Bundle;
 
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import se.codebet.remindme.R;
 
 public class AuthStartFragment extends Fragment {
     View view;

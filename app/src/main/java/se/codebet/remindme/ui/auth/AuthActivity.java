@@ -1,8 +1,10 @@
-package se.codebet.remindme;
+package se.codebet.remindme.ui.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import se.codebet.remindme.R;
 
 public class AuthActivity extends AppCompatActivity {
 

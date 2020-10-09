@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import se.codebet.remindme.AuthActivity;
+import se.codebet.remindme.ui.auth.AuthActivity;
 
 public class MainActivity extends AppCompatActivity {
 

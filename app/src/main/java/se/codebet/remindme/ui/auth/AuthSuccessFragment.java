@@ -1,4 +1,4 @@
-package se.codebet.remindme;
+package se.codebet.remindme.ui.auth;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import se.codebet.remindme.R;
 
 public class AuthSuccessFragment extends Fragment {
     View view;

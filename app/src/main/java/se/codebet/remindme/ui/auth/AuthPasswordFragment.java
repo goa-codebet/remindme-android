@@ -1,4 +1,4 @@
-package se.codebet.remindme;
+package se.codebet.remindme.ui.auth;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import se.codebet.remindme.R;
 
 public class AuthPasswordFragment extends Fragment {
     View view;

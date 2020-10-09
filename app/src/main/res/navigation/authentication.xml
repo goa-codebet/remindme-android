@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/authStartFragment"
-        android:name="se.codebet.remindme.AuthStartFragment"
+        android:name="se.codebet.remindme.ui.auth.AuthStartFragment"
         android:label="fragment_auth_start"
         tools:layout="@layout/fragment_auth_start" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/authEmailFragment"
-        android:name="se.codebet.remindme.AuthEmailFragment"
+        android:name="se.codebet.remindme.ui.auth.AuthEmailFragment"
         android:label="fragment_auth_email"
         tools:layout="@layout/fragment_auth_email" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/authSuccessFragment"
-        android:name="se.codebet.remindme.AuthSuccessFragment"
+        android:name="se.codebet.remindme.ui.auth.AuthSuccessFragment"
         android:label="fragment_auth_success"
         tools:layout="@layout/fragment_auth_success" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/authPasswordFragment"
-        android:name="se.codebet.remindme.AuthPasswordFragment"
+        android:name="se.codebet.remindme.ui.auth.AuthPasswordFragment"
         android:label="fragment_auth_password"
         tools:layout="@layout/fragment_auth_password" />
 </navigation>
