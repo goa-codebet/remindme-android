@@ -30,6 +30,15 @@ public class AuthPasswordFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_auth_password, container, false);
         password = view.findViewById(R.id.editTextTextPassword);
 
+        final boolean isLogin = AuthPasswordFragmentArgs.fromBundle(getArguments()).getIsLogin();
+        final String email = AuthPasswordFragmentArgs.fromBundle(getArguments()).getEmail();
+
+        Log.i("email", email);
+
+        if (isLogin) {
+            password.setHint("Ange lösenord");
+        }
+
         password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

@@ -47,7 +47,7 @@ public class AuthEmailFragment extends Fragment {
 
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
                     handled = true;
-                    checkEmail();
+                    checkEmail(email.getText().toString());
                 }
                 return handled;
             }
@@ -56,20 +56,22 @@ public class AuthEmailFragment extends Fragment {
         return view;
     }
 
-    private void checkEmail() {
+    private void checkEmail(final String email) {
         ApiRestClient api = ApiRestClient.getInstance();
-        api.checkIfEmailExists("kiasd@asdasd.se").enqueue(new Callback<Email>() {
+        api.checkIfEmailExists(email).enqueue(new Callback<Email>() {
             @Override
             public void onResponse(Call<Email> call, Response<Email> response) {
                 int code = response.code();
+
+                AuthEmailFragmentDirections.LoginAction action = AuthEmailFragmentDirections.loginAction(email);
+
                 switch(code) {
                     case 200:
-                        Bundle args = new Bundle();
-                        args.putBoolean("is_login", true);
-                        Navigation.findNavController(view).navigate(R.id.authSuccessFragment);
+                        action.setIsLogin(true);
+                        Navigation.findNavController(view).navigate(action);
                         break;
                     case 404:
-                        Navigation.findNavController(view).navigate(R.id.authPasswordFragment);
+                        Navigation.findNavController(view).navigate(action);
                         break;
                     default:
                         break;

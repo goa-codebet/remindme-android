@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +25,16 @@ public class AuthSuccessFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_auth_success, container, false);
 
+        final boolean isLogin = AuthSuccessFragmentArgs.fromBundle(getArguments()).getIsLogin();
+        final String email = AuthSuccessFragmentArgs.fromBundle(getArguments()).getEmail();
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Navigation.findNavController(view).navigate(R.id.authPasswordFragment);
+                AuthSuccessFragmentDirections.PasswordAction action = AuthSuccessFragmentDirections.passwordAction(email);
+                action.setIsLogin(isLogin);
+                Navigation.findNavController(view).navigate(action);
             }
         }, 5000);
 
