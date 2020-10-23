@@ -8,6 +8,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import se.codebet.remindme.api.interfaces.EmailApi;
 import se.codebet.remindme.data.models.Email;
+import se.codebet.remindme.data.models.Token;
+import se.codebet.remindme.data.models.UserData;
 
 public class ApiRestClient {
 
@@ -46,13 +48,29 @@ public class ApiRestClient {
     }
 
     /**
-     * Invoke getWeather via {@link Call} request.
+     * Check if an email already exists
      *
      * @param email String
      */
     public Call<Email> checkIfEmailExists(String email) {
         EmailApi api = mRetrofit.create(EmailApi.class);
         return api.checkIfEmailExists(email);
+    }
+
+    /**
+     * Create account
+     */
+    public Call<Token> createAccount(UserData userdata) {
+        EmailApi api = mRetrofit.create(EmailApi.class);
+        return api.createAccount(userdata);
+    }
+
+    /**
+     * Login
+     */
+    public Call<Token> login(UserData userdata) {
+        EmailApi api = mRetrofit.create(EmailApi.class);
+        return api.login(userdata);
     }
 
 }
